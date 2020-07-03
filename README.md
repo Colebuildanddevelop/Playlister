@@ -20,7 +20,6 @@ Models:
           password: string,
         }
 
-
     - Playlist
        - has many Songs
        - has many likes
@@ -30,7 +29,6 @@ Models:
          title: string,
          user_id: integer,
          category_id: integer,
-
        }
 
     - Like
