@@ -5,9 +5,9 @@ class PlaylistCard extends React.Component{
        
         return(
             <div>  
-                <td>
+             
                 {this.props.video.snippet.title}
-                </td>      
+                 
         
             </div>
            

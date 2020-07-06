@@ -9,20 +9,13 @@ class PlaylistList extends React.Component{
         }
      
         return(
+            
             <div>
-                  <table className="playlist celled striped padded table">
-                <tbody>
-                    <tr>
-                        <th>
-                            <h3 className="palylist center aligned header">Jazz Playlist</h3>
-                        </th>
-                    </tr>
+                  
                     {this.props.videos.map(video => {
                     return(<li><PlaylistCard video={video}/></li>)
                 })}
-                </tbody>
-
-            </table>
+            
 
             </div>   
                
