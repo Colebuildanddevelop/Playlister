@@ -1,6 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-
-    skip_before_action :logged_in?, only: [:create]
+  skip_before_action :logged_in?, only: [:create]
   
   # Sign Up
   def create
