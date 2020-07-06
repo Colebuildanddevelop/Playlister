@@ -40,7 +40,6 @@ Models:
           playlist_id: integer
       }
 
-
     - Song
       - belongs to Playlist
 
@@ -63,6 +62,40 @@ Models:
 
       }
 
-<!-- <iframe src="https://open.spotify.com/embed/playlist/0vvXsWCC9xrXsKd4FyS8kM" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> -->
+FRONT END 
 
+COMPONENTS
 
+- SearchContainer 
+  - SearchBar
+  - VideoList
+    - VideoCard
+  - VideoTile
+    - AddOrCreatePlaylist (allows user to add to their playlist, or create a playlist and add)
+      
+- CategoriesContainer
+  - CategoriesList
+  - Filter (most/least popular, dropdown menu for all categories)
+  - CategoryCard 
+
+- CategoryContainer
+  - PlaylistList
+    - PlaylistCard (createdBy, likes, playlistName)
+      - SongList
+      
+- MyLibraryContainer
+  - User PlaylistList 
+    - PlaylistCard (edit button)
+  - CreateCategoryModal
+  - CreatePlaylistModal
+  
+- EditPlaylistContainer 
+  - ( change playlistName, playlistCategory )
+  - SongList (songName, songGenre, artistName, removeButton)
+
+- ProfileContainer
+  - logout
+  - delete account
+  - edit profile
+
+  
