@@ -1,6 +1,6 @@
 import React from 'react';
-import ApiKey from './Key'
-import MainContainer from './containers/MainContainer'
+
+import LibraryContainer from './containers/LibraryContainer'
 
 
 class App extends React.Component{
@@ -8,7 +8,7 @@ class App extends React.Component{
   render(){
     return (
       <div >
-      <MainContainer />
+      <LibraryContainer />
           
       </div>
     );

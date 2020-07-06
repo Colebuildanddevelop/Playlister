@@ -1,7 +1,7 @@
 import React from 'react';
-import PlaylistCard from './PlaylistCard'
+import LibraryPlaylistCard from './LibraryPlaylistCard'
 
-class PlaylistList extends React.Component{
+class LibraryPlaylistList extends React.Component{
     render(){
         console.log(this.props)
         if (this.props.videos == null){
@@ -13,7 +13,7 @@ class PlaylistList extends React.Component{
             <div>
                   
                     {this.props.videos.map(video => {
-                    return(<li><PlaylistCard video={video}/></li>)
+                    return(<li><LibraryPlaylistCard video={video}/></li>)
                 })}
             
 
@@ -23,4 +23,4 @@ class PlaylistList extends React.Component{
     }
 }
 
-export default PlaylistList;
+export default LibraryPlaylistList;

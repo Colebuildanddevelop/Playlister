@@ -1,8 +1,8 @@
 import React from 'react'
-import PlaylistList from '../components/PlaylistList'
+import LibraryPlaylistList from '../components/LibraryPlaylistList'
 import ApiKey from'../Key'
 
-class MainContainer extends React.Component{
+class LibraryContainer extends React.Component{
 
 
 state={
@@ -11,7 +11,7 @@ state={
   }
 
   componentDidMount (){
-     fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&key=${ApiKey.API_KEY}&q=${this.state.searchTerm}&type=video`)
+     fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&key=${ApiKey.API_KEY1}&q=${this.state.searchTerm}&type=video`)
      //fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyCpsM4JZEmu7P3DxN45cg8wh6QliY87FBk&q=%22pop%22&type=video`)
     .then(res => res.json())
      .then(videos => this.setState({
@@ -24,7 +24,7 @@ state={
     return (
         <div >
       
-          <PlaylistList videos={this.state.videos}/>
+          <LibraryPlaylistList videos={this.state.videos}/>
             
         </div>
     )
@@ -32,4 +32,4 @@ state={
 }
 
 }
-export default MainContainer;
+export default LibraryContainer;

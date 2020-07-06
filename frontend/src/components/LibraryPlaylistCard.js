@@ -1,6 +1,6 @@
 import React from 'react';
 
-class PlaylistCard extends React.Component{
+class LibraryPlaylistCard extends React.Component{
     render(){
        
         return(
@@ -14,4 +14,4 @@ class PlaylistCard extends React.Component{
         )
     }
 }
-export default PlaylistCard;
+export default LibraryPlaylistCard;
