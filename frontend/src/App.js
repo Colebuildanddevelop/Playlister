@@ -3,6 +3,7 @@ import SearchContainer from "./Containers/SearchContainer";
 import VideoList from "./Components/VideoList";
 import keys from "./keys.js";
 import _ from "lodash";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const URL = (key, term) => {
   return `https://www.googleapis.com/youtube/v3/search?part=snippet&key=${key}&q=${term}&type=video`;
