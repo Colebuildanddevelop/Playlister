@@ -7,11 +7,24 @@ class PlaylistList extends React.Component{
         if (this.props.videos == null){
             return<h2>hello</h2>
         }
+     
         return(
-         
             <div>
-                {this.props.videos.map(video => {return<PlaylistCard video={video}/>})}
-            </div>
+                  <table className="playlist celled striped padded table">
+                <tbody>
+                    <tr>
+                        <th>
+                            <h3 className="palylist center aligned header">Jazz Playlist</h3>
+                        </th>
+                    </tr>
+                    {this.props.videos.map(video => {
+                    return(<li><PlaylistCard video={video}/></li>)
+                })}
+                </tbody>
+
+            </table>
+
+            </div>   
                
         )
     }
