@@ -14,6 +14,15 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
+  def destroy
+    if params[:id] == @user.id.to_s
+      @user.destroy
+      render json: {"success": "user account has been deleted"}
+    else 
+      render json: {"error": "only the owner of the account can delete"}
+    end
+  end
+
   private
 
   def user_params
