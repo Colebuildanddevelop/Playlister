@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2020_07_02_182700) do
     t.string "name"
     t.string "artist"
     t.string "genre"
+    t.string "video_id"
     t.integer "playlist_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -55,5 +56,3 @@ ActiveRecord::Schema.define(version: 2020_07_02_182700) do
   end
 
 end
-    t.string "password_digest"
-    t.string "password_digest"

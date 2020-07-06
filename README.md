@@ -97,5 +97,3 @@ COMPONENTS
   - logout
   - delete account
   - edit profile
-
-  
