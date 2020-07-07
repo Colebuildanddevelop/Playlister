@@ -7,7 +7,12 @@ export default class CategoriesContainer extends React.Component {
   };
 
   componentDidMount() {
-    fetch("http://localhost:3000/api/v1/categories")
+    fetch("http://localhost:3000/api/v1/categories", {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${localStorage.token}`,
+      },
+    })
       .then((res) => res.json())
       .then((data) =>
         this.setState({
@@ -18,6 +23,7 @@ export default class CategoriesContainer extends React.Component {
   render() {
     return (
       <div>
+        <h1>Categories</h1>
         <CategoriesList categories={this.state.categories} />
       </div>
     );

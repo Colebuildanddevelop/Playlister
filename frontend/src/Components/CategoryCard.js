@@ -3,15 +3,6 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
 export default class CategoryCard extends React.Component {
-  state = {
-    show: false,
-  };
-
-  handleModal = () => {
-    this.setState({
-      show: !this.state.show,
-    });
-  };
   render() {
     const { category } = this.props;
     return (
