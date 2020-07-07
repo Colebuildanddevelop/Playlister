@@ -16,7 +16,7 @@ Rails.application.routes.draw do
       resources :songs
       resources :likes
       resources :playlists
-      resources :users, only: [:create]
+      resources :users, only: [:create, :destroy]
       post '/login', to: 'auth#create'
 
     end
