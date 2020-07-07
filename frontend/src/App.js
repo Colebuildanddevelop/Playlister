@@ -6,9 +6,10 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import NavBar from "./Components/NavBar";
 import SearchContainer from "./Containers/SearchContainer";
-// import VideoList from "./Components/VideoList";
+
 import LibraryContainer from "./Containers/LibraryContainer";
 import LoginContainer from "./Containers/LoginContainer";
+import CategoriesContainer from "./Containers/CategoriesContainer";
 
 const URL = (key, term) => {
   return `https://www.googleapis.com/youtube/v3/search?part=snippet&key=${key}&q=${term}&type=video`;
@@ -53,7 +54,7 @@ class App extends React.Component {
       this.changeSearchTerm(term);
     }, 200);
     // console.log(this.state.videos);
-    console.log(this.state);
+    // console.log(this.state);
     return (
       <div className="App">
         {this.state.isLoading ? (
@@ -61,8 +62,7 @@ class App extends React.Component {
         ) : (
           <BrowserRouter>
             <NavBar />
-            <div style={{margin: "20px"}}>
-              
+            <div style={{ margin: "20px" }}>
               <Switch>
                 <Route
                   exact
@@ -83,6 +83,13 @@ class App extends React.Component {
                       </div>
                     );
                   }}
+                />
+                <Route
+                  exact
+                  path="/categories"
+                  render={(routeProps) => (
+                    <CategoriesContainer {...routeProps} />
+                  )}
                 />
                 <Route
                   exact
