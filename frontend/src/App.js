@@ -8,6 +8,7 @@ import NavBar from "./Components/NavBar";
 import SearchContainer from "./Containers/SearchContainer";
 // import VideoList from "./Components/VideoList";
 import LibraryContainer from "./Containers/LibraryContainer";
+import LoginContainer from "./Containers/LoginContainer";
 
 const URL = (key, term) => {
   return `https://www.googleapis.com/youtube/v3/search?part=snippet&key=${key}&q=${term}&type=video`;
@@ -59,9 +60,15 @@ class App extends React.Component {
           <h4>Loading...</h4>
         ) : (
           <BrowserRouter>
-            <div>
-              <NavBar />
+            <NavBar />
+            <div style={{margin: "20px"}}>
+              
               <Switch>
+                <Route
+                  exact
+                  path="/log-in"
+                  render={(routeProps) => <LoginContainer {...routeProps} />}
+                />
                 <Route
                   exact
                   path="/discover"
