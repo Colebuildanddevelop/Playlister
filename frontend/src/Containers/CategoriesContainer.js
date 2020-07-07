@@ -1,9 +1,11 @@
 import React from "react";
 import CategoriesList from "../Components/CategoriesList.js";
+import Dropdown from "react-bootstrap/Dropdown";
 
 export default class CategoriesContainer extends React.Component {
   state = {
     categories: [],
+    sort: "All",
   };
 
   componentDidMount() {
@@ -20,11 +22,39 @@ export default class CategoriesContainer extends React.Component {
         })
       );
   }
+
+  handleSort = () => {
+    let defaultSort = this.state.categories;
+    switch (this.state.sort) {
+      case "Most Popular":
+        return defaultSort.sort((a, b) => (a.name > b.name ? 1 : -1));
+      case "Least Popular":
+        return defaultSort.sort((a, b) => (a.name < b.name ? 1 : -1));
+      default:
+        return defaultSort;
+    }
+  };
+
+  sortBy = (selection) => {
+    this.setState({
+      sort: selection,
+    });
+  };
   render() {
     return (
       <div>
         <h1>Categories</h1>
-        <CategoriesList categories={this.state.categories} />
+
+        <label>
+          <strong>Sort By:</strong>
+          <select onChange={(e) => this.sortBy(e.target.value)}>
+            <option value="All">All</option>
+            <option value="Most Popular">Most Popular</option>
+            <option value="Least Popular">Least Popular</option>
+          </select>
+        </label>
+
+        <CategoriesList categories={this.handleSort()} />
       </div>
     );
   }

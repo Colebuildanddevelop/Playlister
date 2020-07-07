@@ -108,3 +108,176 @@ No serializer found for resource: #<Category id: 1, name: "Movie Scores", user_i
 Completed 200 OK in 410ms (Views: 299.3ms | ActiveRecord: 81.4ms | Allocations: 8285)
 
 
+Started GET "/api/v1/categories" for ::1 at 2020-07-07 14:46:26 -0500
+  [1m[35m (14.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CategoriesController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `logged_in?'
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/categories_controller.rb:4:in `index'
+No serializer found for resource: #<Category id: 1, name: "Movie Scores", user_id: 1, created_at: "2020-07-07 14:15:44", updated_at: "2020-07-07 14:15:44">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (0.68ms)
+Completed 200 OK in 82ms (Views: 33.3ms | ActiveRecord: 9.8ms | Allocations: 15952)
+
+
+Started GET "/api/v1/categories" for ::1 at 2020-07-07 14:48:18 -0500
+Processing by Api::V1::CategoriesController#index as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `logged_in?'
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/categories_controller.rb:4:in `index'
+No serializer found for resource: #<Category id: 1, name: "Movie Scores", user_id: 1, created_at: "2020-07-07 14:15:44", updated_at: "2020-07-07 14:15:44">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (0.83ms)
+Completed 200 OK in 9ms (Views: 4.5ms | ActiveRecord: 2.0ms | Allocations: 2059)
+
+
+Started GET "/api/v1/categories" for ::1 at 2020-07-07 15:15:29 -0500
+Processing by Api::V1::CategoriesController#index as */*
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `logged_in?'
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/categories_controller.rb:4:in `index'
+No serializer found for resource: #<Category id: 1, name: "Movie Scores", user_id: 1, created_at: "2020-07-07 14:15:44", updated_at: "2020-07-07 14:15:44">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (5.72ms)
+Completed 200 OK in 51ms (Views: 24.5ms | ActiveRecord: 3.2ms | Allocations: 2153)
+
+
+Started GET "/api/v1/categories" for ::1 at 2020-07-07 15:18:09 -0500
+Processing by Api::V1::CategoriesController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.19ms)
+Filter chain halted as :logged_in? rendered or redirected
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.0ms | Allocations: 530)
+
+
+Started GET "/api/v1/categories" for ::1 at 2020-07-07 15:19:24 -0500
+Processing by Api::V1::CategoriesController#index as */*
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `logged_in?'
+  [1m[36mCategory Load (14.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/categories_controller.rb:4:in `index'
+No serializer found for resource: #<Category id: 1, name: "Movie Scores", user_id: 1, created_at: "2020-07-07 14:15:44", updated_at: "2020-07-07 14:15:44">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (0.63ms)
+Completed 200 OK in 25ms (Views: 4.9ms | ActiveRecord: 16.4ms | Allocations: 2037)
+
+
+Started GET "/api/v1/categories" for ::1 at 2020-07-07 15:19:43 -0500
+Processing by Api::V1::CategoriesController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `logged_in?'
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/categories_controller.rb:4:in `index'
+No serializer found for resource: #<Category id: 1, name: "Movie Scores", user_id: 1, created_at: "2020-07-07 14:15:44", updated_at: "2020-07-07 14:15:44">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (1.71ms)
+Completed 200 OK in 13ms (Views: 8.1ms | ActiveRecord: 1.4ms | Allocations: 2037)
+
+
+Started GET "/api/v1/categories" for ::1 at 2020-07-07 15:21:01 -0500
+Processing by Api::V1::CategoriesController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `logged_in?'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/categories_controller.rb:4:in `index'
+No serializer found for resource: #<Category id: 1, name: "Movie Scores", user_id: 1, created_at: "2020-07-07 14:15:44", updated_at: "2020-07-07 14:15:44">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (0.84ms)
+Completed 200 OK in 13ms (Views: 7.9ms | ActiveRecord: 1.0ms | Allocations: 2057)
+
+
+Started GET "/api/v1/categories" for ::1 at 2020-07-07 15:29:46 -0500
+Processing by Api::V1::CategoriesController#index as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `logged_in?'
+  [1m[36mCategory Load (2.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/categories_controller.rb:4:in `index'
+No serializer found for resource: #<Category id: 1, name: "Movie Scores", user_id: 1, created_at: "2020-07-07 14:15:44", updated_at: "2020-07-07 14:15:44">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (2.59ms)
+Completed 200 OK in 49ms (Views: 19.4ms | ActiveRecord: 3.5ms | Allocations: 2153)
+
+
+Started GET "/api/v1/categories" for ::1 at 2020-07-07 15:32:44 -0500
+Processing by Api::V1::CategoriesController#index as */*
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `logged_in?'
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/categories_controller.rb:4:in `index'
+No serializer found for resource: #<Category id: 1, name: "Movie Scores", user_id: 1, created_at: "2020-07-07 14:15:44", updated_at: "2020-07-07 14:15:44">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (1.01ms)
+Completed 200 OK in 17ms (Views: 9.2ms | ActiveRecord: 1.7ms | Allocations: 2037)
+
+
+Started GET "/api/v1/categories" for ::1 at 2020-07-07 15:34:18 -0500
+Processing by Api::V1::CategoriesController#index as */*
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `logged_in?'
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/categories_controller.rb:4:in `index'
+No serializer found for resource: #<Category id: 1, name: "Movie Scores", user_id: 1, created_at: "2020-07-07 14:15:44", updated_at: "2020-07-07 14:15:44">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (1.61ms)
+Completed 200 OK in 21ms (Views: 10.1ms | ActiveRecord: 2.4ms | Allocations: 2037)
+
+
+Started GET "/api/v1/categories" for ::1 at 2020-07-07 15:35:13 -0500
+Processing by Api::V1::CategoriesController#index as */*
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `logged_in?'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/categories_controller.rb:4:in `index'
+No serializer found for resource: #<Category id: 1, name: "Movie Scores", user_id: 1, created_at: "2020-07-07 14:15:44", updated_at: "2020-07-07 14:15:44">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (0.95ms)
+Completed 200 OK in 32ms (Views: 15.8ms | ActiveRecord: 1.5ms | Allocations: 2037)
+
+
+Started GET "/api/v1/categories" for ::1 at 2020-07-07 15:35:48 -0500
+Processing by Api::V1::CategoriesController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `logged_in?'
+  [1m[36mCategory Load (1.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/categories_controller.rb:4:in `index'
+No serializer found for resource: #<Category id: 1, name: "Movie Scores", user_id: 1, created_at: "2020-07-07 14:15:44", updated_at: "2020-07-07 14:15:44">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (2.81ms)
+Completed 200 OK in 20ms (Views: 10.8ms | ActiveRecord: 2.3ms | Allocations: 2037)
+
+
+Started GET "/api/v1/categories" for ::1 at 2020-07-07 15:42:47 -0500
+Processing by Api::V1::CategoriesController#index as */*
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `logged_in?'
+  [1m[36mCategory Load (3.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/categories_controller.rb:4:in `index'
+No serializer found for resource: #<Category id: 1, name: "Movie Scores", user_id: 1, created_at: "2020-07-07 14:15:44", updated_at: "2020-07-07 14:15:44">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (5.31ms)
+Completed 200 OK in 65ms (Views: 29.6ms | ActiveRecord: 9.1ms | Allocations: 2138)
+
+
+Started GET "/api/v1/categories" for ::1 at 2020-07-07 15:43:30 -0500
+Processing by Api::V1::CategoriesController#index as */*
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `logged_in?'
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/categories_controller.rb:4:in `index'
+No serializer found for resource: #<Category id: 1, name: "Movie Scores", user_id: 1, created_at: "2020-07-07 14:15:44", updated_at: "2020-07-07 14:15:44">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (0.58ms)
+Completed 200 OK in 16ms (Views: 4.8ms | ActiveRecord: 6.4ms | Allocations: 2037)
+
+
+Started GET "/api/v1/categories" for ::1 at 2020-07-07 15:43:55 -0500
+Processing by Api::V1::CategoriesController#index as */*
+  [1m[36mUser Load (12.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `logged_in?'
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/categories_controller.rb:4:in `index'
+No serializer found for resource: #<Category id: 1, name: "Movie Scores", user_id: 1, created_at: "2020-07-07 14:15:44", updated_at: "2020-07-07 14:15:44">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (2.97ms)
+Completed 200 OK in 24ms (Views: 7.4ms | ActiveRecord: 13.0ms | Allocations: 2037)
+
+
+Started GET "/api/v1/categories" for ::1 at 2020-07-07 15:47:28 -0500
+Processing by Api::V1::CategoriesController#index as */*
+  [1m[36mUser Load (15.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `logged_in?'
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/categories_controller.rb:4:in `index'
+No serializer found for resource: #<Category id: 1, name: "Movie Scores", user_id: 1, created_at: "2020-07-07 14:15:44", updated_at: "2020-07-07 14:15:44">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (1.76ms)
+Completed 200 OK in 28ms (Views: 8.1ms | ActiveRecord: 16.3ms | Allocations: 2037)
+
+
