@@ -6,7 +6,15 @@ class LibraryContainer extends React.Component {
   state = {
     videos: null,
     searchTerm: "jazz",
+    title: ''
+ 
   };
+
+  changeTitle = () => {
+    this.setState({
+      title: "newTitle"
+    })
+  }
 
   componentDidMount() {
     fetch(
@@ -20,10 +28,14 @@ class LibraryContainer extends React.Component {
         })
       );
   }
+
+ 
+
+
   render() {
     return (
       <div>
-        <LibraryPlaylistList videos={this.state.videos} />
+        <LibraryPlaylistList  changeTitle={this.changeTitle}  videos={this.state.videos} />
       </div>
     );
   }
