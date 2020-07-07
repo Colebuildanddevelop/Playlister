@@ -3138,3 +3138,240 @@ Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 2.0ms | Allocations: 872)
 
 
   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/discover" for 127.0.0.1 at 2020-07-06 17:35:45 -0500
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/discover"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2020-07-06 17:39:08 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/lilirodriguez/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/lilirodriguez/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 9.5ms | Allocations: 195)
+Completed 200 OK in 15ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 866)
+
+
+Started GET "/categories" for ::1 at 2020-07-06 17:42:12 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/categories"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users" for ::1 at 2020-07-06 17:42:21 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/v1/categories" for ::1 at 2020-07-06 17:43:15 -0500
+Processing by Api::V1::CategoriesController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.64ms)
+Filter chain halted as :logged_in? rendered or redirected
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 760)
+
+
+Started GET "/api/v1/login" for ::1 at 2020-07-06 17:44:23 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/login"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/v1/login" for ::1 at 2020-07-06 17:45:00 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/login"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-07-06 17:45:17 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/lilirodriguez/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/lilirodriguez/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 17.6ms | Allocations: 190)
+Completed 200 OK in 22ms (Views: 19.4ms | ActiveRecord: 0.0ms | Allocations: 723)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-07-06 17:45:41 -0500
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"username"=>"cole", "password"=>"[FILTERED]", "auth"=>{"username"=>"cole", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (35.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "cole"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Completed 200 OK in 126ms (Views: 0.9ms | ActiveRecord: 66.6ms | Allocations: 4140)
+
+
+Started POST "/api/v1/users" for ::1 at 2020-07-06 17:46:24 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"username"=>"lili", "password"=>"[FILTERED]", "user"=>{"username"=>"lili", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+Completed 500 Internal Server Error in 568ms (ActiveRecord: 63.9ms | Allocations: 5299)
+
+
+  
+NoMethodError (undefined method `password_digest=' for #<User:0x00007fddd33df9b0>
+Did you mean?  password=):
+  
+app/controllers/api/v1/users_controller.rb:6:in `create'
+Started POST "/api/v1/users" for 127.0.0.1 at 2020-07-06 17:48:27 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"username"=>"cole", "password"=>"[FILTERED]", "user"=>{"username"=>"cole", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+Completed 500 Internal Server Error in 337ms (ActiveRecord: 0.0ms | Allocations: 2062)
+
+
+  
+NoMethodError (undefined method `password_digest=' for #<User:0x00007fddd04d49b8>
+Did you mean?  password=):
+  
+app/controllers/api/v1/users_controller.rb:6:in `create'
+Started POST "/api/v1/users" for 127.0.0.1 at 2020-07-06 17:48:57 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"username"=>"cole", "password"=>"[FILTERED]", "user"=>{"username"=>"cole", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+Completed 500 Internal Server Error in 290ms (ActiveRecord: 0.0ms | Allocations: 2053)
+
+
+  
+NoMethodError (undefined method `password_digest=' for #<User:0x00007fddd03f9ef8>
+Did you mean?  password=):
+  
+app/controllers/api/v1/users_controller.rb:6:in `create'
+Started POST "/api/v1/users" for 127.0.0.1 at 2020-07-06 17:52:09 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"username"=>"cole", "password"=>"[FILTERED]", "user"=>{"username"=>"cole", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+Completed 500 Internal Server Error in 295ms (ActiveRecord: 0.0ms | Allocations: 2059)
+
+
+  
+NoMethodError (undefined method `password_digest=' for #<User:0x00007fddd81c2f88>
+Did you mean?  password=):
+  
+app/controllers/api/v1/users_controller.rb:6:in `create'
+Started POST "/api/v1/users" for 127.0.0.1 at 2020-07-06 17:54:13 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"username"=>"sylviawoods", "password"=>"[FILTERED]", "user"=>{"username"=>"sylviawoods", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+Completed 500 Internal Server Error in 437ms (ActiveRecord: 0.0ms | Allocations: 2053)
+
+
+  
+NoMethodError (undefined method `password_digest=' for #<User:0x00007fddd3647978>
+Did you mean?  password=):
+  
+app/controllers/api/v1/users_controller.rb:6:in `create'
+Started POST "/api/v1/users" for 127.0.0.1 at 2020-07-06 17:55:10 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"username"=>"sylviawoods", "password"=>"[FILTERED]", "user"=>{"username"=>"sylviawoods", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 282ms (ActiveRecord: 8.1ms | Allocations: 5036)
+
+
+  
+NoMethodError (undefined method `password_digest=' for #<User:0x00007fddd38e5b58>
+Did you mean?  password=):
+  
+app/controllers/api/v1/users_controller.rb:6:in `create'

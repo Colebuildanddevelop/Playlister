@@ -1,9 +1,13 @@
 import React from "react";
-import SearchContainer from "./Containers/SearchContainer";
-import VideoList from "./Components/VideoList";
 import keys from "./keys.js";
 import _ from "lodash";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+
+import NavBar from "./Components/NavBar";
+import SearchContainer from "./Containers/SearchContainer";
+// import VideoList from "./Components/VideoList";
+import LibraryContainer from "./Containers/LibraryContainer";
 
 const URL = (key, term) => {
   return `https://www.googleapis.com/youtube/v3/search?part=snippet&key=${key}&q=${term}&type=video`;
@@ -42,20 +46,45 @@ class App extends React.Component {
         })
       );
   };
+
   render() {
     const videoSearch = _.debounce((term) => {
       this.changeSearchTerm(term);
     }, 200);
     // console.log(this.state.videos);
+    console.log(this.state);
     return (
       <div className="App">
         {this.state.isLoading ? (
           <h4>Loading...</h4>
         ) : (
-          <div>
-            <SearchContainer changeTerm={videoSearch} />
-            <VideoList videos={this.state.videos} />
-          </div>
+          <BrowserRouter>
+            <div>
+              <NavBar />
+              <Switch>
+                <Route
+                  exact
+                  path="/discover"
+                  render={(routeProps) => {
+                    return (
+                      <div>
+                        <SearchContainer
+                          {...routeProps}
+                          changeTerm={videoSearch}
+                          videos={this.state.videos}
+                        />
+                      </div>
+                    );
+                  }}
+                />
+                <Route
+                  exact
+                  path="/my-library"
+                  render={(routeProps) => <LibraryContainer {...routeProps} />}
+                />
+              </Switch>
+            </div>
+          </BrowserRouter>
         )}
       </div>
     );
