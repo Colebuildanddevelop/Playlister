@@ -1,5 +1,6 @@
 import React from "react";
 import LibraryPlaylistCard from "./LibraryPlaylistCard";
+import Button from "react-bootstrap/Button";
 
 class LibraryPlaylistList extends React.Component {
   render() {
@@ -9,10 +10,22 @@ class LibraryPlaylistList extends React.Component {
     }
 
     return (
-      <div >
-        {this.props.videos.map((video) => {
-          return <LibraryPlaylistCard video={video} />;
-        })}
+      <div>
+        <div id="child-middle">
+          <Button variant="secondary">Create Playlist</Button>{" "}
+        </div>
+
+        <div id="child-left">
+          <h2>My Library</h2>
+          {this.props.videos.map((video) => {
+            return (
+              <LibraryPlaylistCard
+                changeTitle={this.props.changeTitle}
+                video={video}
+              />
+            );
+          })}
+        </div>
       </div>
     );
   }

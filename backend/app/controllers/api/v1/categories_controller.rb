@@ -1,11 +1,27 @@
 class Api::V1::CategoriesController < ApplicationController
 
     def index
-        render json: Category.all
+        render json: Category.all, include: :playlists
+        
     end
     
     def show
-        render json: Category.find(params[:id])
+        category = Category.find(params[:id])
+        serialized_category = {
+            name: category.name,
+            user_id: category.user_id,
+            playlists: category.playlists.map do |p|
+                {
+                id: p.id,
+                title: p.title,
+                songs: p.songs,
+                created_by: User.find(p.user_id).username,
+                category: Category.find(p.category_id).name,
+                likes: p.likes.length
+                }
+            end
+        }
+        render json: serialized_category
     end
 
     def create 
