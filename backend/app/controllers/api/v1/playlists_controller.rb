@@ -2,7 +2,14 @@ class Api::V1::PlaylistsController < ApplicationController
 
     def index 
         playlists = Playlist.all
-        render json: playlists
+        serialized_playlist = playlists.map do |p| 
+          {
+            id: p.id,
+            title: p.title,
+            createdBy: User.find(p.user_id).username
+          }
+        end
+        render json: serialized_playlist
     end
 
     def show 

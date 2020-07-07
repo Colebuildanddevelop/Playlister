@@ -9,6 +9,7 @@ import SearchContainer from "./Containers/SearchContainer";
 // import VideoList from "./Components/VideoList";
 import LibraryContainer from "./Containers/LibraryContainer";
 import LoginContainer from "./Containers/LoginContainer";
+import PlaylistContainer from "./Containers/PlaylistContainer.js";
 
 const URL = (key, term) => {
   return `https://www.googleapis.com/youtube/v3/search?part=snippet&key=${key}&q=${term}&type=video`;
@@ -68,6 +69,11 @@ class App extends React.Component {
                   exact
                   path="/log-in"
                   render={(routeProps) => <LoginContainer {...routeProps} />}
+                />
+                <Route
+                  exact
+                  path="/playlists"
+                  render={(routeProps) => <PlaylistContainer {...routeProps} />}
                 />
                 <Route
                   exact
