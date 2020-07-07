@@ -7,6 +7,11 @@ import Modal from "react-bootstrap/Modal";
 
 
 class LibraryPlaylistCard extends React.Component {
+  
+  handleClick = () =>{
+    this.props.updateLibrary(this.props.video)
+  }
+  
   render() {
     const embedUrl = `https://www.youtube.com/embed/${this.props.video.id.videoId}`;
 
@@ -15,7 +20,7 @@ class LibraryPlaylistCard extends React.Component {
         <div id="child-left">
         <Modal.Dialog>
          <Modal.Header closeButton>
-    <Modal.Title>{<iframe src={embedUrl} width="250" />}</Modal.Title>
+          <Modal.Title>{<iframe src={embedUrl} width="250" />}</Modal.Title>
        </Modal.Header>
 
        <Modal.Body>
@@ -23,7 +28,7 @@ class LibraryPlaylistCard extends React.Component {
        </Modal.Body>
 
        <Modal.Footer>
-        <Button variant="secondary">Edit</Button>
+        <Button onClick={this.handleClick} variant="secondary">Edit</Button>
         <Button variant="primary">Save changes</Button>
         </Modal.Footer>
        </Modal.Dialog>

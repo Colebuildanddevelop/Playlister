@@ -13,7 +13,7 @@ class LibraryPlaylistList extends React.Component{
             <div id="child-left">
                   <h2>My Library</h2>
                     {this.props.videos.map(video => {
-                    return(<LibraryPlaylistCard video={video}/>)
+                    return(<LibraryPlaylistCard  updateLibrary={this.props.updateLibrary}  video={video}/>)
                 })}
             
 
