@@ -10,7 +10,7 @@ class LibraryPlaylistList extends React.Component{
      
         return(
             
-            <div>
+            <div id="child-left">
                   <h2>My Library</h2>
                     {this.props.videos.map(video => {
                     return(<LibraryPlaylistCard video={video}/>)
