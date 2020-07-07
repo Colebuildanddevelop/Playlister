@@ -6,7 +6,10 @@ class Api::V1::PlaylistsController < ApplicationController
           {
             id: p.id,
             title: p.title,
-            createdBy: User.find(p.user_id).username
+            songs: p.songs,
+            created_by: User.find(p.user_id).username,
+            category: Category.find(p.category_id).name,
+            likes: p.likes.length
           }
         end
         render json: serialized_playlist

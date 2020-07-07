@@ -2,6 +2,7 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Modal from "react-bootstrap/Modal";
+import Dropdown from "react-bootstrap/Dropdown";
 
 export default class VideoCard extends React.Component {
   state = {
@@ -31,7 +32,6 @@ export default class VideoCard extends React.Component {
             <Card.Title>{video.snippet.title}</Card.Title>
 
             <iframe src={embedUrl} width="250" />
-            {/* <Button variant="primary" onClick={() => this.handleClick(video)}> */}
             <Button variant="primary" onClick={() => this.handleModal()}>
               Add to a Playlist
             </Button>
@@ -43,6 +43,16 @@ export default class VideoCard extends React.Component {
           </Modal.Header>
           <Modal.Body>
             Select the Playlist you want to add this song to.
+            <Dropdown>
+              <Dropdown.Toggle variant="info" id="dropdown-basic">
+                Your Playlists
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item>Playlist 1</Dropdown.Item>
+                <Dropdown.Item>Playlist 2</Dropdown.Item>
+                <Dropdown.Item>Playlist 3</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={() => this.handleModal()}>

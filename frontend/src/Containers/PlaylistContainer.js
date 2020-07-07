@@ -26,7 +26,7 @@ class PlaylistContainer extends React.Component {
     console.log(this.state)
     if (this.state.playlists === null) return <h1>loading</h1>
     return (
-      <h1>Playlists</h1>
+      <PlaylistList playlists={this.state.playlists} />
     )
   }
 }
