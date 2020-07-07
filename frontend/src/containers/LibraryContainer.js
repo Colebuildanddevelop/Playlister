@@ -1,20 +1,15 @@
 import React from "react";
 import LibraryPlaylistList from "../Components/LibraryPlaylistList";
 import ApiKey from "../keys";
+import CreatePlaylist from "../Components/CreatePlaylist";
 
 class LibraryContainer extends React.Component {
   state = {
     videos: null,
     searchTerm: "jazz",
-    title: ''
+ 
  
   };
-
-  changeTitle = () => {
-    this.setState({
-      title: "newTitle"
-    })
-  }
 
   componentDidMount() {
     fetch(
@@ -28,14 +23,13 @@ class LibraryContainer extends React.Component {
         })
       );
   }
-
- 
-
-
+      
   render() {
     return (
       <div>
-        <LibraryPlaylistList  changeTitle={this.changeTitle}  videos={this.state.videos} />
+        <LibraryPlaylistList   videos={this.state.videos} 
+        />
+        <CreatePlaylist />
       </div>
     );
   }
