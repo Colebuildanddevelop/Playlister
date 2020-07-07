@@ -11,9 +11,9 @@ class LibraryPlaylistList extends React.Component{
         return(
             
             <div>
-                  
+                  <h2>My Library</h2>
                     {this.props.videos.map(video => {
-                    return(<li><LibraryPlaylistCard video={video}/></li>)
+                    return(<LibraryPlaylistCard video={video}/>)
                 })}
             
 
