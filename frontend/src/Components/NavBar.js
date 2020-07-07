@@ -27,9 +27,15 @@ const NavBar = () => {
           </Nav.Link>
         </Nav>
         <Nav className="justify-content-end">
-          <Button as={Link} to="/log-in">
-            SignUp/Login
-          </Button>
+          {!localStorage.token ? (
+            <Button as={Link} to="/log-in">
+              SignUp/Login
+            </Button>
+          ) : (
+            <Nav.Link as={Link} to="/profile">
+              My Profile
+            </Nav.Link>
+          )}
         </Nav>
       </Navbar.Collapse>
     </Navbar>

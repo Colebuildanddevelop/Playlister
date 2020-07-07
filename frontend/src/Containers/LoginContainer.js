@@ -8,7 +8,8 @@ class LoginContainer extends React.Component {
   state = {
     form: 'Login',
     username: '',
-    password: ''
+    password: '',
+    error: false
   }
 
   handleSignUp = (e) => {
@@ -52,6 +53,8 @@ class LoginContainer extends React.Component {
       } else {
         localStorage.token = userInfo.token
         this.props.history.push("/")
+        window.location.reload(false);
+
       }
     })
   }
@@ -65,7 +68,8 @@ class LoginContainer extends React.Component {
   switchForm = () => {
     const newState = this.state.form === "Login" ? "Sign Up" : "Login"
     this.setState({
-      form: newState
+      form: newState,
+      error: false
     })
   }
 
