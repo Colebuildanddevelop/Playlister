@@ -3138,3 +3138,22 @@ Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 2.0ms | Allocations: 872)
 
 
   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Started POST "/api/v1/users" for ::1 at 2020-07-07 08:53:58 -0500
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"username"=>"cole", "password"=>"[FILTERED]", "user"=>{"username"=>"cole", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Exists? (17.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "cole"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:8:in `create'
+  [1m[36mCACHE User Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "cole"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+  [1m[36mUser Create (20.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "cole"], ["password_digest", "$2a$12$LvUMh5NkUHgg2OnAa7MaxusqHT.Zm.4gGbHmF6jiwx75Qqje1b/UO"], ["created_at", "2020-07-07 13:54:00.361649"], ["updated_at", "2020-07-07 13:54:00.361649"]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (103.49ms)
+Completed 201 Created in 1759ms (Views: 115.5ms | ActiveRecord: 168.4ms | Allocations: 11652)
+
+
