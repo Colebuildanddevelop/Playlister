@@ -11,7 +11,7 @@ export default class CategoryCard extends React.Component {
           <Card.Body>
             <Card.Title>{category.name}</Card.Title>
             <Card.Text>Playlist's go here</Card.Text>
-            <Button href="#">Go to Category's Page</Button>
+            <Button href="#">Go to {category.name}'s Page</Button>
           </Card.Body>
         </Card>
       </div>
