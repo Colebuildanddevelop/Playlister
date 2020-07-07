@@ -1,6 +1,5 @@
 import React from "react";
 import CategoriesList from "../Components/CategoriesList.js";
-import Dropdown from "react-bootstrap/Dropdown";
 
 export default class CategoriesContainer extends React.Component {
   state = {
@@ -27,9 +26,13 @@ export default class CategoriesContainer extends React.Component {
     let defaultSort = this.state.categories;
     switch (this.state.sort) {
       case "Most Popular":
-        return defaultSort.sort((a, b) => (a.name > b.name ? 1 : -1));
+        return defaultSort.sort((a, b) =>
+          a.playlists.length < b.playlists.length ? 1 : -1
+        );
       case "Least Popular":
-        return defaultSort.sort((a, b) => (a.name < b.name ? 1 : -1));
+        return defaultSort.sort((a, b) =>
+          a.playlists.length > b.playlists.length ? 1 : -1
+        );
       default:
         return defaultSort;
     }
@@ -41,6 +44,7 @@ export default class CategoriesContainer extends React.Component {
     });
   };
   render() {
+    console.log(this.state.categories);
     return (
       <div>
         <h1>Categories</h1>
