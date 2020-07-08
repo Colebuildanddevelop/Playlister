@@ -12,6 +12,7 @@ export default class SearchContainer extends React.Component {
     super();
     this.state = {
       videos: [],
+      userPlaylists: [],
       searchTerm: "",
       isLoading: true,
     };
@@ -19,7 +20,24 @@ export default class SearchContainer extends React.Component {
 
   componentDidMount() {
     this.fetchVideos();
+    this.fetchUserPlaylists();
   }
+
+  fetchUserPlaylists = () => {
+    fetch(`http://localhost:3000/api/v1/users/${localStorage.user_id}`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${localStorage.token}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((userPlaylists) => {
+        this.setState({
+          userPlaylists: userPlaylists.playlists,
+          isLoading: false,
+        });
+      });
+  };
 
   changeSearchTerm = (term) => {
     this.setState(
@@ -36,7 +54,6 @@ export default class SearchContainer extends React.Component {
       .then((data) =>
         this.setState({
           videos: data.items,
-          isLoading: false,
         })
       );
   };
@@ -52,7 +69,10 @@ export default class SearchContainer extends React.Component {
         ) : (
           <div>
             <SearchBar changeTerm={videoSearch} />
-            <VideoList videos={this.state.videos} />
+            <VideoList
+              videos={this.state.videos}
+              userPlaylists={this.state.userPlaylists}
+            />
           </div>
         )}
       </div>

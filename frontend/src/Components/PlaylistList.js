@@ -6,7 +6,7 @@ export default class PlaylistList extends React.Component {
     return (
       <div>
         {this.props.playlists.map((playlist) => (
-          <PlaylistCard playlist={playlist} />
+          <PlaylistCard playlist={playlist} setSong={this.props.setSong} />
         ))}
       </div>
     );

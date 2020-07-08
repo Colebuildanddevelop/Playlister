@@ -2,7 +2,7 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Modal from "react-bootstrap/Modal";
-import Dropdown from "react-bootstrap/Dropdown";
+// import Dropdown from "react-bootstrap/Dropdown";
 
 export default class VideoCard extends React.Component {
   state = {
@@ -22,7 +22,34 @@ export default class VideoCard extends React.Component {
       show: !this.state.show,
     });
   };
+
+  saveSong = (e) => {
+    fetch("http://localhost:3000/api/v1/songs", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${localStorage.token}`,
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({
+        name: this.props.video.snippet.title,
+        artist: this.props.video.snippet.channelTitle,
+        video_id: this.props.video.id.videoId,
+        playlist_id: this.state.playlist_id,
+      }),
+    })
+      .then((res) => res.json())
+      .then(() => {
+        alert("added to playlist");
+      });
+  };
+
+  handleChange = (e) => {
+    e.persist();
+    console.log(e);
+  };
+
   render() {
+    console.log(this.state);
     const { video } = this.props;
     const embedUrl = `https://www.youtube.com/embed/${video.id.videoId}`;
     return (
@@ -43,22 +70,27 @@ export default class VideoCard extends React.Component {
           </Modal.Header>
           <Modal.Body>
             Select the Playlist you want to add this song to.
-            <Dropdown>
-              <Dropdown.Toggle variant="info" id="dropdown-basic">
-                Your Playlists
-              </Dropdown.Toggle>
-              <Dropdown.Menu>
-                <Dropdown.Item>Playlist 1</Dropdown.Item>
-                <Dropdown.Item>Playlist 2</Dropdown.Item>
-                <Dropdown.Item>Playlist 3</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
+            <label>
+              <select
+                onChange={(e) =>
+                  this.setState({ playlist_id: e.currentTarget.value })
+                }
+              >
+                <strong>Your Playlists</strong>
+                <option selected disabled>
+                  choose a playlist...
+                </option>
+                {this.props.userPlaylists.map((playlist) => {
+                  return <option value={playlist.id}>{playlist.title}</option>;
+                })}
+              </select>
+            </label>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={() => this.handleModal()}>
               Close
             </Button>
-            <Button variant="primary" onClick={() => this.handleModal()}>
+            <Button onClick={this.saveSong} variant="primary">
               Save Changes
             </Button>
           </Modal.Footer>
