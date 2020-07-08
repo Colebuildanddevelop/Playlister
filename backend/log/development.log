@@ -2445,3 +2445,136 @@ No serializer found for resource: {:id=>1, :title=>"Latin", :songs=>#<ActiveReco
 Completed 200 OK in 167ms (Views: 31.3ms | ActiveRecord: 72.7ms | Allocations: 14136)
 
 
+Started GET "/" for ::1 at 2020-07-08 12:08:10 -0500
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/yannickdjoumbi/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/yannickdjoumbi/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 13.0ms | Allocations: 424)
+Completed 200 OK in 29ms (Views: 21.7ms | ActiveRecord: 0.0ms | Allocations: 2220)
+
+
+Started GET "/api/v1/categories" for ::1 at 2020-07-08 12:12:16 -0500
+Processing by Api::V1::CategoriesController#index as */*
+  [1m[36mUser Load (53.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `logged_in?'
+  [1m[36mCategory Load (33.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/categories_controller.rb:4:in `index'
+No serializer found for resource: #<Category id: 1, name: "Movie Scores", user_id: 3, created_at: "2020-07-07 15:08:18", updated_at: "2020-07-07 15:08:18">
+[active_model_serializers]   [1m[36mPlaylist Load (1.0ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."category_id" = $1[0m  [["category_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/categories_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mPlaylist Load (0.6ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."category_id" = $1[0m  [["category_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/categories_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mPlaylist Load (0.4ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."category_id" = $1[0m  [["category_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/categories_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (71.63ms)
+Completed 200 OK in 432ms (Views: 96.1ms | ActiveRecord: 183.4ms | Allocations: 29459)
+
+
+Started GET "/api/v1/categories/1" for ::1 at 2020-07-08 12:12:22 -0500
+Processing by Api::V1::CategoriesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `logged_in?'
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/categories_controller.rb:9:in `show'
+  [1m[36mPlaylist Load (0.5ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."category_id" = $1[0m  [["category_id", 1]]
+  ↳ app/controllers/api/v1/categories_controller.rb:13:in `map'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/categories_controller.rb:18:in `block in show'
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/categories_controller.rb:19:in `block in show'
+  [1m[36mLike Load (1.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."playlist_id" = $1[0m  [["playlist_id", 1]]
+  ↳ app/controllers/api/v1/categories_controller.rb:20:in `block in show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/categories_controller.rb:18:in `block in show'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/categories_controller.rb:19:in `block in show'
+  [1m[36mLike Load (0.4ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."playlist_id" = $1[0m  [["playlist_id", 2]]
+  ↳ app/controllers/api/v1/categories_controller.rb:20:in `block in show'
+[active_model_serializers]   [1m[36mSong Load (0.9ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = $1[0m  [["playlist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/categories_controller.rb:24:in `show'
+[active_model_serializers]   [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = $1[0m  [["playlist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/categories_controller.rb:24:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (69.22ms)
+Completed 200 OK in 138ms (Views: 34.4ms | ActiveRecord: 50.4ms | Allocations: 19660)
+
+
+Started GET "/api/v1/users/1" for ::1 at 2020-07-08 12:12:25 -0500
+Processing by Api::V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (9.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `logged_in?'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:26:in `show'
+  [1m[36mPlaylist Load (0.8ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:27:in `map'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:32:in `block in show'
+  [1m[36mCategory Load (1.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:33:in `block in show'
+  [1m[36mLike Load (0.6ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."playlist_id" = $1[0m  [["playlist_id", 3]]
+  ↳ app/controllers/api/v1/users_controller.rb:34:in `block in show'
+[active_model_serializers]   [1m[36mSong Load (0.7ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = $1[0m  [["playlist_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:40:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.74ms)
+Completed 200 OK in 36ms (Views: 6.1ms | ActiveRecord: 14.0ms | Allocations: 6305)
+
+
+Started GET "/api/v1/users/1" for ::1 at 2020-07-08 12:12:31 -0500
+Processing by Api::V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `logged_in?'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:26:in `show'
+  [1m[36mPlaylist Load (0.5ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:27:in `map'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:32:in `block in show'
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:33:in `block in show'
+  [1m[36mLike Load (1.6ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."playlist_id" = $1[0m  [["playlist_id", 3]]
+  ↳ app/controllers/api/v1/users_controller.rb:34:in `block in show'
+[active_model_serializers]   [1m[36mSong Load (3.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = $1[0m  [["playlist_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:40:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (7.99ms)
+Completed 200 OK in 29ms (Views: 5.2ms | ActiveRecord: 7.9ms | Allocations: 5997)
+
+
+Started GET "/api/v1/playlists" for ::1 at 2020-07-08 12:12:38 -0500
+Processing by Api::V1::PlaylistsController#index as */*
+  [1m[36mUser Load (10.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `logged_in?'
+  [1m[36mPlaylist Load (1.4ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  ↳ app/controllers/api/v1/playlists_controller.rb:5:in `map'
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/playlists_controller.rb:10:in `block in index'
+  [1m[36mCategory Load (5.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/playlists_controller.rb:11:in `block in index'
+  [1m[36mLike Load (0.6ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."playlist_id" = $1[0m  [["playlist_id", 1]]
+  ↳ app/controllers/api/v1/playlists_controller.rb:12:in `block in index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/playlists_controller.rb:10:in `block in index'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/playlists_controller.rb:11:in `block in index'
+  [1m[36mLike Load (13.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."playlist_id" = $1[0m  [["playlist_id", 2]]
+  ↳ app/controllers/api/v1/playlists_controller.rb:12:in `block in index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/playlists_controller.rb:10:in `block in index'
+  [1m[36mCategory Load (2.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/playlists_controller.rb:11:in `block in index'
+  [1m[36mLike Load (17.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."playlist_id" = $1[0m  [["playlist_id", 3]]
+  ↳ app/controllers/api/v1/playlists_controller.rb:12:in `block in index'
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = $1 LIMIT $2[0m  [["playlist_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/api/v1/playlists_controller.rb:15:in `index'
+No serializer found for resource: {:id=>1, :title=>"Electronic", :songs=>#<ActiveRecord::Associations::CollectionProxy []>, :created_by=>"grasshopper", :category=>"Movie Scores", :likes=>5}
+[active_model_serializers]   [1m[36mSong Load (1.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = $1[0m  [["playlist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/playlists_controller.rb:15:in `index'
+[active_model_serializers]   [1m[36mSong Load (5.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = $1[0m  [["playlist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/playlists_controller.rb:15:in `index'
+[active_model_serializers]   [1m[36mSong Load (0.7ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = $1[0m  [["playlist_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/playlists_controller.rb:15:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (18.86ms)
+Completed 200 OK in 105ms (Views: 16.4ms | ActiveRecord: 63.6ms | Allocations: 13089)
+
+
