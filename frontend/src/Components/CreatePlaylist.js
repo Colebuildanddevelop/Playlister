@@ -1,45 +1,50 @@
 import React from 'react';
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import Dropdown from "react-bootstrap/Dropdown"
 
 
 
 class CreatePlaylist extends React.Component{
+
+    // state={
+    //     title: '',
+    //     category: ''
+    // }
+
+    // handleChange = (e) => {
+    //  this.setState({
+    //      [e.target.name]: e.target.value
+    //  })
+
+    // }
+
+    // handleClikc = (e) => {
+    //     e.preventDefault()
+    //     this.props.newPlaylist(this.state)
+    // }
     
    
-    render(){
-        return(
-            <div>
-
-
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Create Playlist
-</button>
-
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Playlist Name</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-       <input type="textfield"></input>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Submit</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-          
-
+render(){
+    return(
+        <div>
+            <form>
+            <div class="form-group">
+            <input name="title" type="textfield" class="form-control" id="exampleFormControlInput1" placeholder="Playlist Nanme"></input>
             </div>
+            <div class="form-group">
+             <label for="exampleFormControlSelect1">Select Category</label>
+             <select class="form-control" id="exampleFormControlSelect1">
+             <option name="option1">1</option>
+             <option name="option2">2</option>
+             <option name="option3">3</option>
+             <option name="option4">4</option>
+             <option name="option5">5</option>
+             </select>
+             </div>
+             <Button variant="primary">Submit</Button>
+            </form>
+        </div>
         
             
             

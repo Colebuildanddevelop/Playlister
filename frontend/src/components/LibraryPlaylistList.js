@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 class LibraryPlaylistList extends React.Component{
     render(){
         console.log(this.props)
-        if (this.props.videos == null){
+        if (this.props.playlists == null){
             return<h2>hello</h2>
         }   
         return(
@@ -16,8 +16,8 @@ class LibraryPlaylistList extends React.Component{
                   </div>      
             <div id="child-left">
                   <h2>My Library</h2>
-                    {this.props.videos.map(video => {
-                    return(<LibraryPlaylistCard updateTitle={this.props.updateTitle}  video={video}/>)
+                    {this.props.playlists.map(playlist => {
+                    return(<LibraryPlaylistCard  playlist={playlist}/>)
                 })}
             </div>     
             </div>              
