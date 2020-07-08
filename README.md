@@ -103,12 +103,18 @@ COMPONENTS
   - delete account
   - edit profile
 
-Log out x
-Increment Likes +
+Log out x!
+Increment Likes +!
 Add a song to a playlist +!
 Edit the user x
-Delete a song
+Delete a song +
 delete a playlist +
-
+create a playlist +
 play a song +!
-play the next song plays
+play the next song plays x
+
+---
+
+Delete a song +
+delete a playlist +
+create a playlist +!

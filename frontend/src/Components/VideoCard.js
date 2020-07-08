@@ -6,16 +6,8 @@ import Modal from "react-bootstrap/Modal";
 
 export default class VideoCard extends React.Component {
   state = {
-    myPlaylists: [],
     show: false,
   };
-
-  //   handleClick = (song) => {
-  //     // console.log(song);
-  //     this.setState({
-  //       myPlaylists: [...this.state.myPlaylists, song],
-  //     });
-  //   };
 
   handleModal = () => {
     this.setState({
@@ -39,7 +31,8 @@ export default class VideoCard extends React.Component {
     })
       .then((res) => res.json())
       .then(() => {
-        alert("added to playlist");
+        alert("Added song to playlist");
+        this.handleModal();
       });
   };
 
@@ -59,13 +52,13 @@ export default class VideoCard extends React.Component {
             <Card.Title>{video.snippet.title}</Card.Title>
 
             <iframe src={embedUrl} width="250" />
-            <Button variant="primary" onClick={() => this.handleModal()}>
+            <Button variant="primary" onClick={this.handleModal}>
               Add to a Playlist
             </Button>
           </Card.Body>
         </Card>
         <Modal show={this.state.show}>
-          <Modal.Header closeButton onClick={() => this.handleModal()}>
+          <Modal.Header closeButton onClick={this.handleModal}>
             <Modal.Title>Add Song To a Playlist</Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -87,7 +80,7 @@ export default class VideoCard extends React.Component {
             </label>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={() => this.handleModal()}>
+            <Button variant="secondary" onClick={this.handleModal}>
               Close
             </Button>
             <Button onClick={this.saveSong} variant="primary">

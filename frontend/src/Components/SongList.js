@@ -8,7 +8,7 @@ export default class SongList extends React.Component {
         <Table striped bordered hover size="sm">
           <thead>
             <tr>
-              <th>Name</th>
+              <th>Song Name</th>
               <th>Artist</th>
               <th>Genre</th>
             </tr>
