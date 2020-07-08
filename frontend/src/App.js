@@ -13,17 +13,61 @@ import CategoriesContainer from "./Containers/CategoriesContainer";
 import CategoryContainer from "./Containers/CategoryContainer";
 
 class App extends React.Component {
+  state = {
+    loggedIn: false,
+  };
+
+  componentDidMount() {
+    if (localStorage.token) {
+      this.setState({
+        loggedIn: true,
+      });
+    }
+  }
+
+  logout = () => {
+    localStorage.clear();
+    this.setState({
+      loggedIn: false,
+    });
+  };
+
+  login = () => {
+    this.setState({
+      loggedIn: true,
+    });
+  };
+
   render() {
+    if (!this.state.loggedIn)
+      return (
+        <div>
+          <BrowserRouter>
+            <NavBar logout={this.logout} loggedIn={this.state.loggedIn} />
+            <Switch>
+              <Route
+                exact
+                path="/log-in"
+                render={(routeProps) => (
+                  <LoginContainer login={this.login} {...routeProps} />
+                )}
+              />
+            </Switch>
+          </BrowserRouter>
+        </div>
+      );
     return (
       <div className="App">
         <BrowserRouter>
-          <NavBar />
+          <NavBar logout={this.logout} loggedIn={this.state.loggedIn} />
           <div style={{ margin: "20px" }}>
             <Switch>
               <Route
                 exact
                 path="/log-in"
-                render={(routeProps) => <LoginContainer {...routeProps} />}
+                render={(routeProps) => (
+                  <LoginContainer login={this.login} {...routeProps} />
+                )}
               />
               <Route
                 exact
@@ -43,7 +87,7 @@ class App extends React.Component {
               />
               <Route
                 exact
-                path="/categories"
+                path="/"
                 render={(routeProps) => <CategoriesContainer {...routeProps} />}
               />
               <Route
@@ -54,7 +98,9 @@ class App extends React.Component {
               <Route
                 exact
                 path="/my-library"
-                render={(routeProps) => <LibraryContainer {...routeProps} />}
+                render={(routeProps) => (
+                  <LibraryContainer routeProps={routeProps} />
+                )}
               />
             </Switch>
           </div>

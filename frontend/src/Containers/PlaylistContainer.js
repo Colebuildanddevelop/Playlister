@@ -3,7 +3,7 @@ import PlaylistList from "../Components/PlaylistList";
 
 class PlaylistContainer extends React.Component {
   state = {
-    playlists: null,
+    playlists: [],
     currentSongId: "",
   };
 

@@ -52,8 +52,8 @@ class LoginContainer extends React.Component {
         } else {
           localStorage.token = userInfo.token;
           localStorage.user_id = userInfo.user_id;
+          this.props.login();
           this.props.history.push("/");
-          window.location.reload(false);
         }
       });
   };

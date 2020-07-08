@@ -38,12 +38,12 @@ export default class PlaylistCard extends React.Component {
         <Card style={{ width: "24rem" }}>
           <Card.Body>
             <Card.Title>{playlist.title}</Card.Title>
-            <Card.Text>creator: {playlist.created_by}</Card.Text>
-            <Card.Text>category: {playlist.category}</Card.Text>
+            <Card.Text>Creator: {playlist.created_by}</Card.Text>
+            <Card.Text>Category: {playlist.category}</Card.Text>
             <SongList songs={playlist.songs} setSong={this.props.setSong} />
           </Card.Body>
           <Card.Footer>
-            likes: {this.state.likes}
+            Likes: {this.state.likes}
             <Button onClick={this.handleLike} className="like-btn">
               Like
             </Button>
