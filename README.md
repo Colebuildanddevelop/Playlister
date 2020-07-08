@@ -62,34 +62,39 @@ Models:
 
       }
 
-FRONT END 
+FRONT END
 
 COMPONENTS
 
-- SearchContainer 
+- SearchContainer
   - SearchBar
   - VideoList
     - VideoCard
   - VideoTile
     - AddOrCreatePlaylist (allows user to add to their playlist, or create a playlist and add)
-      
 - CategoriesContainer
+
   - CategoriesList
   - Filter (most/least popular, dropdown menu for all categories)
-  - CategoryCard 
+  - CategoryCard
 
 - CategoryContainer
+
   - PlaylistList
+
     - PlaylistCard (createdBy, likes, playlistName)
+
       - SongList
-      
+
 - MyLibraryContainer
-  - User PlaylistList 
+
+  - User PlaylistList
     - PlaylistCard (edit button)
   - CreateCategoryModal
   - CreatePlaylistModal
-  
-- EditPlaylistContainer 
+
+- EditPlaylistContainer
+
   - ( change playlistName, playlistCategory )
   - SongList (songName, songGenre, artistName, removeButton)
 
@@ -97,3 +102,13 @@ COMPONENTS
   - logout
   - delete account
   - edit profile
+
+Log out x
+Increment Likes +
+Add a song to a playlist +!
+Edit the user x
+Delete a song
+delete a playlist +
+
+play a song +!
+play the next song plays

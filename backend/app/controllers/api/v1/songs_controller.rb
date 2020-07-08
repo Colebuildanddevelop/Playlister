@@ -14,7 +14,7 @@ class Api::V1::SongsController < ApplicationController
             song_created = Song.create(
                 name: params[:name],
                 artist: params[:artist],
-                genre: params[:genre],
+                genre: "Pop",
                 video_id: params[:video_id],
                 playlist_id: params[:playlist_id]
             )

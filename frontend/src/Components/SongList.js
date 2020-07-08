@@ -1,5 +1,5 @@
 import React from "react";
-import Table from 'react-bootstrap/Table';
+import Table from "react-bootstrap/Table";
 
 export default class SongList extends React.Component {
   render() {
@@ -16,16 +16,16 @@ export default class SongList extends React.Component {
           <tbody>
             {this.props.songs.map((song, idx) => {
               return (
-                <tr>
+                <tr onClick={() => this.props.setSong(song.video_id)}>
                   <td>{song.name}</td>
                   <td>{song.artist}</td>
                   <td>{song.genre}</td>
                 </tr>
-              )
+              );
             })}
           </tbody>
         </Table>
       </div>
-    )
+    );
   }
 }
