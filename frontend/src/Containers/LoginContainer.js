@@ -99,7 +99,8 @@ class LoginContainer extends React.Component {
             <div>
               <Button
                 onClick={this.handleLogin}
-                className="btn-block"
+                className="edit-btn"
+                style={{ width: "100%" }}
                 variant="primary"
                 type="submit"
               >
@@ -113,7 +114,8 @@ class LoginContainer extends React.Component {
             <div>
               <Button
                 onClick={this.handleSignUp}
-                className="btn-block"
+                className="edit-btn"
+                style={{ width: "100%" }}
                 variant="primary"
                 type="submit"
               >

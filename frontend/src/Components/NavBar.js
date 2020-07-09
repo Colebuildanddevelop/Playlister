@@ -29,7 +29,7 @@ class NavBar extends React.Component {
           </Nav>
           <Nav className="justify-content-end">
             {!this.props.loggedIn ? (
-              <Button as={Link} to="/log-in">
+              <Button as={Link} to="/log-in" className="edit-btn">
                 SignUp/Login
               </Button>
             ) : (
