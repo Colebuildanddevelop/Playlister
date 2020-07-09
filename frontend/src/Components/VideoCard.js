@@ -2,7 +2,9 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Modal from "react-bootstrap/Modal";
-// import Dropdown from "react-bootstrap/Dropdown";
+
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 export default class VideoCard extends React.Component {
   state = {
@@ -47,18 +49,34 @@ export default class VideoCard extends React.Component {
     const embedUrl = `https://www.youtube.com/embed/${video.id.videoId}`;
     return (
       <div>
-        <Card style={{ width: "18rem" }}>
-          <Card.Body>
-            <Card.Title>{video.snippet.title}</Card.Title>
-
-            <iframe src={embedUrl} width="250" />
-            <Button variant="primary" onClick={this.handleModal}>
-              Add to a Playlist
-            </Button>
-          </Card.Body>
-        </Card>
+        <Row>
+          <Col>
+            <Col>
+              <Col>
+                <Card className="discover-card">
+                  <Card.Header
+                    className="lib-header"
+                    style={{ height: "80px" }}
+                  >
+                    <Card.Title>{video.snippet.title}</Card.Title>
+                  </Card.Header>
+                  <Card.Body>
+                    <iframe src={embedUrl} width="360" height="200" />
+                    <Button className="add-song" onClick={this.handleModal}>
+                      Add to a Playlist
+                    </Button>
+                  </Card.Body>
+                </Card>
+              </Col>
+            </Col>
+          </Col>
+        </Row>
         <Modal show={this.state.show}>
-          <Modal.Header closeButton onClick={this.handleModal}>
+          <Modal.Header
+            className="lib-header"
+            closeButton
+            onClick={this.handleModal}
+          >
             <Modal.Title>Add Song To a Playlist</Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -83,7 +101,7 @@ export default class VideoCard extends React.Component {
             <Button variant="secondary" onClick={this.handleModal}>
               Close
             </Button>
-            <Button onClick={this.saveSong} variant="primary">
+            <Button onClick={this.saveSong} className="edit-btn">
               Save Changes
             </Button>
           </Modal.Footer>

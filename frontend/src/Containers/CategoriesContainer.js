@@ -1,5 +1,8 @@
 import React from "react";
 import CategoriesList from "../Components/CategoriesList.js";
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 export default class CategoriesContainer extends React.Component {
   state = {
@@ -47,18 +50,30 @@ export default class CategoriesContainer extends React.Component {
     console.log(this.state.categories);
     return (
       <div>
-        <h1>Categories</h1>
+        <Row>
+          <Col>
+            <h1 className="category-title">Categories</h1>
+          </Col>
+        </Row>
+        <Row>
+          <label className="sort">
+            <strong>Sort By: </strong>
 
-        <label>
-          <strong>Sort By:</strong>
-          <select onChange={(e) => this.sortBy(e.target.value)}>
-            <option value="All">All</option>
-            <option value="Most Popular">Most Popular</option>
-            <option value="Least Popular">Least Popular</option>
-          </select>
-        </label>
+            <select onChange={(e) => this.sortBy(e.target.value)}>
+              <option value="All">All</option>
+              <option value="Most Popular">Most Popular</option>
+              <option value="Least Popular">Least Popular</option>
+            </select>
+          </label>
+        </Row>
 
-        <CategoriesList categories={this.handleSort()} />
+        <Container>
+          <Row>
+            <Col>
+              <CategoriesList categories={this.handleSort()} />
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }

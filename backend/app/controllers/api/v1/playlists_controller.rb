@@ -43,7 +43,7 @@ class Api::V1::PlaylistsController < ApplicationController
         if playlist_to_update.user_id == @user.id 
             playlist_to_update.update(
               title: params[:title],
-              category_id: params[:category_id],
+              # category_id: params[:category_id],
               user_id: @user.id
             )
             render json: playlist_to_update

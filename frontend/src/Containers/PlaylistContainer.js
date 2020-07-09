@@ -34,9 +34,16 @@ class PlaylistContainer extends React.Component {
     if (this.state.playlists === null) return <h1>loading</h1>;
     const embedUrl = `https://www.youtube.com/embed/${this.state.currentSongId}`;
     return (
-      <div>
-        <PlaylistList playlists={this.state.playlists} setSong={this.setSong} />
-        <iframe src={embedUrl} width="250" />
+      <div style={{ position: "relative" }}>
+        <div>
+          <PlaylistList
+            playlists={this.state.playlists}
+            setSong={this.setSong}
+          />
+        </div>
+        <div className="video-container">
+          <iframe src={embedUrl} width="800" height="400" />
+        </div>
       </div>
     );
   }

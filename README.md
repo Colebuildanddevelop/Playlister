@@ -115,6 +115,6 @@ play the next song plays x
 
 ---
 
-Delete a song +
-delete a playlist +
+Delete a song +!
+delete a playlist +!
 create a playlist +!

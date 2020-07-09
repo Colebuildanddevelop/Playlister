@@ -7,23 +7,23 @@ import Link from "react-router-dom/Link";
 class NavBar extends React.Component {
   render() {
     return (
-      <Navbar bg="light" expand="lg">
-        <Navbar.Brand as={Link} to="/">
+      <Navbar className="navbar" expand="lg">
+        <Navbar.Brand style={{ color: "white" }} as={Link} to="/">
           Playlister App
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link as={Link} to="/">
+            <Nav.Link style={{ color: "white" }} as={Link} to="/">
               Categories
             </Nav.Link>
-            <Nav.Link as={Link} to="/discover">
+            <Nav.Link style={{ color: "white" }} as={Link} to="/discover">
               Discover
             </Nav.Link>
-            <Nav.Link as={Link} to="/my-library">
+            <Nav.Link style={{ color: "white" }} as={Link} to="/my-library">
               My Library
             </Nav.Link>
-            <Nav.Link as={Link} to="/playlists">
+            <Nav.Link style={{ color: "white" }} as={Link} to="/playlists">
               Playlists
             </Nav.Link>
           </Nav>
@@ -36,7 +36,7 @@ class NavBar extends React.Component {
               <Button
                 as={Link}
                 to="/log-in"
-                variant="danger"
+                className="delete-btn"
                 onClick={this.props.logout}
               >
                 Log Out

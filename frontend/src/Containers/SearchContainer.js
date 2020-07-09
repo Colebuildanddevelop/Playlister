@@ -3,6 +3,9 @@ import keys from "../keys.js";
 import _ from "lodash";
 import SearchBar from "../Components/SearchBar.js";
 import VideoList from "../Components/VideoList";
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 const URL = (key, term) => {
   return `https://www.googleapis.com/youtube/v3/search?part=snippet&key=${key}&q=${term}&type=video`;
 };
@@ -69,10 +72,17 @@ export default class SearchContainer extends React.Component {
         ) : (
           <div>
             <SearchBar changeTerm={videoSearch} />
-            <VideoList
-              videos={this.state.videos}
-              userPlaylists={this.state.userPlaylists}
-            />
+
+            <Container style={{ marginLeft: "200px" }}>
+              <Row>
+                <Col>
+                  <VideoList
+                    videos={this.state.videos}
+                    userPlaylists={this.state.userPlaylists}
+                  />
+                </Col>
+              </Row>
+            </Container>
           </div>
         )}
       </div>
