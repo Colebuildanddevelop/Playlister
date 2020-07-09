@@ -4,11 +4,17 @@ export default class SearchBar extends React.Component {
   render() {
     return (
       <div>
-        <input
-          type="text"
-          placeholder="Search"
-          onChange={(e) => this.props.changeTerm(e.target.value)}
-        />
+        <h2 className="discover-header">
+          Search for Songs to Add to Your Playlists
+        </h2>
+        <div style={{ width: "100%" }}>
+          <input
+            type="text"
+            placeholder="Search"
+            className="search-bar"
+            onChange={(e) => this.props.changeTerm(e.target.value)}
+          />
+        </div>
       </div>
     );
   }

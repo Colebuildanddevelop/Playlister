@@ -35,9 +35,11 @@ export default class PlaylistCard extends React.Component {
     const { playlist } = this.props;
     return (
       <div>
-        <Card style={{ width: "24rem" }}>
+        <Card className="playlist-card" style={{ width: "24rem" }}>
+          <Card.Header className="lib-header">
+            <Card.Title className="lib-header">{playlist.title}</Card.Title>
+          </Card.Header>
           <Card.Body>
-            <Card.Title>{playlist.title}</Card.Title>
             <Card.Text>Creator: {playlist.created_by}</Card.Text>
             <Card.Text>Category: {playlist.category}</Card.Text>
             <SongList songs={playlist.songs} setSong={this.props.setSong} />

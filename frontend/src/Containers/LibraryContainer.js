@@ -1,6 +1,6 @@
 import React from "react";
 import LibraryPlaylistList from "../Components/LibraryPlaylistList";
-import ApiKey from "../keys";
+
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
@@ -90,9 +90,6 @@ class LibraryContainer extends React.Component {
     this.setState({
       playlists: [...col.slice(0, i), updatedPlaylist, ...col.slice(i + 1)],
     });
-    // this.setState({
-    //   playlists: []
-    // })
   };
 
   handleModal = () => {
@@ -106,17 +103,24 @@ class LibraryContainer extends React.Component {
     if (this.state.isLoading) return <h1>Loading...</h1>;
     return (
       <div>
-        <Button onClick={this.handleModal}>Create a Playlist</Button>
         <Modal show={this.state.show}>
-          <Modal.Header closeButton onClick={() => this.handleModal()}>
+          <Modal.Header
+            className="lib-header"
+            style={{ textAlign: "center" }}
+            closeButton
+            onClick={() => this.handleModal()}
+          >
             <Modal.Title>Create Playlist</Modal.Title>
           </Modal.Header>
-          <Modal.Body>
-            Select the Playlist you want to add this song to.
+          <Modal.Body style={{ backgroundColor: "#f9f8ff" }}>
             <label>
-              <label>Name your playlist</label>
+              <label style={{ width: "100%", textAlign: "left" }}>
+                Name your playlist
+              </label>
               <input
+                style={{ width: "100%", marginBottom: "20px" }}
                 type="text"
+                placeholder="name of playlist..."
                 value={this.state.title}
                 onChange={(e) => this.setState({ title: e.target.value })}
               />
@@ -135,11 +139,15 @@ class LibraryContainer extends React.Component {
               </select>
             </label>
           </Modal.Body>
-          <Modal.Footer>
+          <Modal.Footer style={{ backgroundColor: "#f9f8ff" }}>
             <Button variant="secondary" onClick={() => this.handleModal()}>
               Close
             </Button>
-            <Button onClick={this.createPlaylist} variant="primary">
+            <Button
+              className="edit-btn"
+              onClick={this.createPlaylist}
+              variant="primary"
+            >
               Create!
             </Button>
           </Modal.Footer>
@@ -150,6 +158,9 @@ class LibraryContainer extends React.Component {
           removePlaylist={this.removePlaylist}
           removeSong={this.removeSong}
         />
+        <Button className="add-btn" onClick={this.handleModal}>
+          Create a Playlist
+        </Button>
       </div>
     );
   }

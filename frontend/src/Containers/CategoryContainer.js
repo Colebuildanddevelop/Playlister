@@ -23,16 +23,32 @@ export default class CategoryContainer extends React.Component {
         })
       );
   }
-  render() {
-    console.log(this.props.match.params.id);
-    console.log(this.state.category);
 
+  setSong = (songId) => {
+    console.log(songId);
+    this.setState({
+      currentSongId: songId,
+    });
+  };
+
+  render() {
+    const embedUrl = `https://www.youtube.com/embed/${this.state.currentSongId}`;
     return (
       <div>
         {this.state.category === null ? (
           <h4>Loading ...</h4>
         ) : (
-          <PlaylistList playlists={this.state.category.playlists} />
+          <div style={{ position: "relative" }}>
+            <div>
+              <PlaylistList
+                playlists={this.state.category.playlists}
+                setSong={this.setSong}
+              />
+            </div>
+            <div style={{ position: "fixed", top: "100px", right: "50px" }}>
+              <iframe src={embedUrl} width="800" height="400" />
+            </div>
+          </div>
         )}
       </div>
     );
